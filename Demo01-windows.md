@@ -1,3 +1,9 @@
+## Pre-requisite
+- Docker for windows is installed and is running
+- Some disk space for the images
+- Decent internet connection
+- Admin privilege 
+
 ## Using docker command line
 ### # Start a web server container image from docker.io
 - Search and download httpd
