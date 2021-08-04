@@ -1,6 +1,6 @@
 
 
-## DEMO 2 : Build Our First Container Image
+### Build Our First Container Image
 - First : Write our own Dockerfile - containing instruction in building our own webserve
 ``` bash
 vi Dockerfile
@@ -33,4 +33,3 @@ skopeo inspect docker://quay.io/jason.wong76/webserver:latest
 # Start the webserver container image on Azure Container Instances
 
 # Start the webserver container image on Azure Container Instances
-
