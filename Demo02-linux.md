@@ -72,3 +72,6 @@ skopeo inspect docker://quay.io/jason_wong76/webserver:latest
 - Click gear icon ![image](images/gear_icon.png) to get into Settings
 - Scrolls to Repository Visibility section
 - Click ![image](images/make_public.png) button
+- Then click OK
+
+- The end of exercise
