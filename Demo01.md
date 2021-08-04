@@ -2,9 +2,9 @@
 - Launch any browser of your preference
 - Google and download Docker Desktop for Windows
 ``` bash
-![download_docker_desktop_installer](/images/download_docker_desktop_installer.png)
+![download_docker_desktop_installer](images/download_docker_desktop_installer.png)
 ```
 - Launch the installer
 ``` bash
-![download_docker_desktop_installer](/images/install_docker_for_desktop.png)
+![download_docker_desktop_installer](images/install_docker_for_desktop.png)
 ```
