@@ -4,8 +4,5 @@
 ![download](images/download_docker_desktop_installer.png)
 
 - Launch the installer
-``` bash
+![download](images/install_docker_for_desktop.png)
 
-```
-[1]:
-https://raw.githubusercontent.com/jasonwcc/learntocontainerized/main/images/
