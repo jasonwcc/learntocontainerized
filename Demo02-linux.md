@@ -69,7 +69,7 @@ skopeo inspect docker://quay.io/jason_wong76/webserver:latest
 9. Configure the repository in quay.io to be public accessible
 - Log into quay.io
 - Click on webserver repository
-- Click gear icon ![image](image/gear_icon.png) to get into Settings
+- Click gear icon ![image](images/gear_icon.png) to get into Settings
 - 
 # Start the webserver container image on Azure Container Instances
 
