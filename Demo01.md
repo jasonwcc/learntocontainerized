@@ -6,5 +6,5 @@ https://github.com/jasonwcc/learntocontainerized/blob/2953552b80ab2cd7ab63e99bd9
 ```
 - Launch the installer
 ``` bash
-![download_docker_desktop_installer](images/install_docker_for_desktop.png)
+(images/install_docker_for_desktop.png)
 ```
