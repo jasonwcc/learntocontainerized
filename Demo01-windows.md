@@ -70,7 +70,7 @@ exit
 
 - Browse to http://localhost:8081
 
-- The end of demo
+- The end of exercise
 
 
 
