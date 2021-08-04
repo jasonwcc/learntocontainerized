@@ -27,27 +27,50 @@ COPY index.html ./var/www/html/
 CMD ["httpd", "-DFOREGROUND"]
 ```
 
-- Run podman build and tag it to external registry quay.io
+4. Run podman build and tag it to external registry quay.io
 ``` bash 
-podman build -t quay.io/jason.wong76/webserver:latest 
+podman build -t quay.io/jason_wong76/webserver:latest 
 ```
 
-- Verify it is built and store in local disk
+5. Verify it is built and store in local disk
 ``` bash 
 podman images
+podman inspect webserver:latest
 ```
 
-- Upload it to quay.io
-``` bash 
-quayio_user=jason.wong76
-read -s quayio_pw
-podman push quay.io/jason.wong76/webserver:latest -u $quayio_user -p $quayio_pw
-```
-
-- Verify it from quay.io site
+6. Test run the image
 ``` bash
-skopeo inspect docker://quay.io/jason.wong76/webserver:latest
+podman run --name www1 -p 8888:80 -d webserver:latest
+podman logs -l
+curl http://localhost:8888
 ```
+
+7. Stop the container and remove the container storage
+``` bash
+podman stop -l
+podman rm -fl
+podman ps -a
+```
+
+8. Upload it to quay.io
+``` bash 
+quayio_user=jason_wong76
+read -s quayio_pw
+podman push --creds $quayio_user:$quayio_pw quay.io/jason_wong76/webserver:latest 
+```
+- If cmd fails with error "authentication " , just retry the cmd. Sometimes internet connections lag, the authentication didn't go thru.
+
+- Verify the image is upoloaded succesfully to quay.io registry
+``` bash
+skopeo inspect docker://quay.io/jason_wong76/webserver:latest
+```
+- Or open browser and point to https://quay.io/jason_wong76
+
+9. Configure the repository in quay.io to be public accessible
+- Log into quay.io
+- Click on webserver repository
+- Click gear icon ![image](image/gear_icon) to get into Settings
+- 
 # Start the webserver container image on Azure Container Instances
 
 # Start the webserver container image on Azure Container Instances
