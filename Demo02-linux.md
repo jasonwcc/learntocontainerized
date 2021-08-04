@@ -1,9 +1,27 @@
 
+## Pre-requisite
+- Sign up with quay.io
+- Some decent internet bandwidth
+- Some decent local disk space (>= 1GiB)
 
-### Build Our First Container Image
-- First : Write our own Dockerfile - containing instruction in building our own webserve
+## Build Our First Container Image
+1. Create directory
 ``` bash
-vi Dockerfile
+mkdir webserver
+cd webserver
+```
+
+2. Customize our own web page
+``` bash
+vi index.html
+Welcome to my Webserver 1.0<br>
+This image is created by Jason<br>
+Copyrighted (C)<br>
+```
+
+3. Write Containerfile - with instructions to build our own webserver
+``` bash
+vi Containerfile
 FROM docker.io/library/httpd
 COPY index.html ./var/www/html/
 CMD ["httpd", "-DFOREGROUND"]
