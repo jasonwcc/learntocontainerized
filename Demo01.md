@@ -1,4 +1,4 @@
-## DEMO 1 : Using docker command line
+## Using docker command line
 ### # Start a web server container image from docker.io
 - Search and download httpd
 ``` bash
@@ -53,6 +53,7 @@ docker exec -it www2 /bin/bash
 ```
 
 - You should see the prompt
+
 ![image](images/www2_shell.PNG)
 
 - While still in the terminal, modify the index.html
@@ -62,7 +63,6 @@ exit
 ```
 
 - Browse to http://localhost:8081
-
 
 
 
