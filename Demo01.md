@@ -1,4 +1,5 @@
-## DEMO 1 : Search and download a web server container image from docker.io
+## DEMO 1 : Using docker command line
+### # Start a web server container image from docker.io
 - Search and download httpd
 ``` bash
 docker search httpd
@@ -6,14 +7,14 @@ docker search httpd
 docker pull docker.io/library/httpd
 ```
 
-- Verify its downlaoded
+- Verify the image is downloaded
 ``` bash
 docker images
 
 docker inspect httpd:latest
 ```
 
-- Start first container from the httpd image
+- Start our very first web server container from the httpd image
 ``` bash
 docker run --name www1 -p 8080:80 -d httpd
 ```
@@ -24,14 +25,14 @@ docker ps
 
 ```
 
-- Let'ssurf to our very own web server
+- Let's surf to our very own web server
 ``` bash
 curl http://localhost:8080
 ```
 
 - Or simply open up a browser and point to http://localhost:8080
 
-- Start second container from the same httpd image but this time we want to change the web page content
+### # Start second container from the same httpd image but this time we change the web page content
 ``` bash
 docker run --name www2 -p 8081:80 -d httpd
 ```
@@ -46,7 +47,7 @@ docker ps
 docker logs www2
 ```
 
-- Connect to www2 with a interactive terminal shell 
+- Open up an interactive terminal to www2
 ``` bash
 docker exec -it www2 /bin/bash
 ```
@@ -54,8 +55,13 @@ docker exec -it www2 /bin/bash
 - You should see the prompt
 ![image](images/www2_shell.png)
 
+- While still in the terminal, modify the index.html
+``` bash
+echo "Hello World!" > htdocs/index.html
+exit
+```
 
-
+- Browse to http://localhost:8081
 
 
 
