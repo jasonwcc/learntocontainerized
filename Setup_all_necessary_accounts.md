@@ -18,7 +18,7 @@
 - Click I'm not a robot --> answer simple puzzle
 - Click Sign Up
 -
-![image](images/sign_up_dockerio.PNG)
+![image](images/sign_up_dockerio.png)
 
 ## Exercise 3 : Install Docker Desktop
 ### Pre-requisite
