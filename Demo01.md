@@ -1,9 +1,6 @@
-GCP:
-user		 student-01-8ee55029ab3e@qwiklabs.net
-Password	PfjY7NSHn6p
 
-## DEMO 1 :
-### Build Your Own Webserver Image
+
+## DEMO 1 : Build Our First Container Image
 - First : Write our own Dockerfile - containing instruction in building our own webserve
 ``` bash
 vi Dockerfile
