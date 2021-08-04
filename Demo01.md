@@ -53,7 +53,7 @@ docker exec -it www2 /bin/bash
 ```
 
 - You should see the prompt
-![image](images/www2_shell.png)
+![image](images/www2_shell.PNG)
 
 - While still in the terminal, modify the index.html
 ``` bash
