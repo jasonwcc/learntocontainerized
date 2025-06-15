@@ -27,7 +27,7 @@ podman logs -l
 
 podman rm -l
 
-<br> Now we pass 2 numbers to it </b><br>
+<br> Now we pass 2 numbers to it <br>
 podman run -d calc 25 5
 
 podman logs -l
@@ -36,4 +36,6 @@ podman logs -l
 
 # Clear resources
 podman rm -af
+<br>
 podman rmi calc -f
+</b>
