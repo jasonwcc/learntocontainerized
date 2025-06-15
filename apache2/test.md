@@ -5,7 +5,7 @@ kubectl run --name test-pod --image nicolaka/netshoot --command sleep 9999
 kubectl get svc 
 
 # Lets scale up the deployment
-kubectl scale deployment www1 --replica 3
+kubectl scale deployment apachewww --replica 3
 
 # Now log into the test-pod and curl the web servers
 kubectl exec -it test-pod -- sh

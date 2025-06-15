@@ -2,8 +2,9 @@
 	Welcome to Jaz Web server 1.0.0.1
 <br>
 This image is with:
-Hostname : <!--# echo var="hostname" default="unknown_host" -->
-Port     : <!--# echo var="server_port" default="unknown_port" -->
+Container: docker.io/library/httpd:2-4
+Hostname : $(hostname)
+Port     : 
 <br>
 Codes    : https://github.com/jasonwcc/learntocontainerized
 </html>
