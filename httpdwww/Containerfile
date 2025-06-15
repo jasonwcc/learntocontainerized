@@ -1,0 +1,5 @@
+FROM docker.io/library/nginx
+COPY docs /usr/share/nginx/html
+COPY conf.d /etc/nginx/conf.d
+#COPY nginx.conf /etc/nginx/nginx.conf
+
