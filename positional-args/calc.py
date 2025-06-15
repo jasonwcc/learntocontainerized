@@ -9,3 +9,4 @@ args = parser.parse_args()
 num1 = args.num1
 num2 = args.num2
 
+print(num1, "*", num2, "=", num1 * num2)

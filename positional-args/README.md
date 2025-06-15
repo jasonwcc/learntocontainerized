@@ -22,13 +22,18 @@ podman build -t calc .
 podman run -d calc
 
 podman logs -l
+<br>
 10 * 20 = 200
 
 podman rm -l
 
-<b> Now we pass 2 numbers to it </b><br>
+<br> Now we pass 2 numbers to it </b><br>
 podman run -d calc 25 5
 
 podman logs -l
+<br>
 25 * 5 = 125
 
+# Clear resources
+podman rm -af
+podman rmi calc -f
