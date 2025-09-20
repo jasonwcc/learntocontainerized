@@ -1,0 +1,4 @@
+FROM nimmis/alpine-apache
+#RUN sed -i "s/80/2222/" /web/config/httpd.conf
+RUN sed -i "s/80/2222/" /etc/apache2/httpd.conf
+ENTRYPOINT /bin/sh /boot.sh
