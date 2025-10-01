@@ -1,5 +1,8 @@
-FROM docker.io/library/php:7.2-apache
+FROM docker.io/jamesbrink/php:latest
+COPY docs /var/www/localhost/htdocs 
+
+#FROM docker.io/library/php:7.2-apache
+#COPY docs /var/www/html/ 
 #COPY docs /usr/local/apache2/htdocs
-COPY docs /var/www/html/
 #RUN apt-get update; apt-get -y install php
 #COPY conf.d /usr/local/apache2/conf
