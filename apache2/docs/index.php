@@ -2,6 +2,7 @@
 $client_ip = $_SERVER['REMOTE_ADDR'];
 $client_port = $_SERVER['REMOTE_PORT'];
 $server_ip = getenv("REMOTE_ADDR");
+$http_client_ip = getenv('HTTP_CLIENT_IP');
 
 echo "Welcome to Jaz Web server 1.0.0.1<br><br>";
 echo "This image is built with :<br>";
@@ -10,6 +11,7 @@ echo "Codes    : https://github.com/jasonwcc/learntocontainerized<br>";
 echo "Hostname : " . gethostname() . "<br>";
 echo "Server IP: " . $server_ip . "<br>";
 echo "Client IP: " . $client_ip . "<br>";
+echo "HTTP client IP: " . $http_client_ip . "<br>";
 echo "Port     : " . $client_port . "<br><br>";
 echo "Created for training purposes by J<br>"
 ?>
