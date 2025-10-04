@@ -1,7 +1,7 @@
 <?php
 $client_ip = $_SERVER['REMOTE_ADDR'];
 $client_port = $_SERVER['REMOTE_PORT'];
-$server_ip = $_SERVER("SERVER_ADDR");
+$server_ip = $_SERVER['SERVER_ADDR'];
 $server_port = $_SERVER['SERVER_PORT'];
 
 echo "Welcome to Jaz Web server 1.0.0.1<br><br>";
