@@ -1,6 +1,8 @@
+# Built 202510
 FROM docker.io/jamesbrink/php:latest
 COPY docs /var/www/localhost/htdocs 
 
+# Built 2024
 #FROM docker.io/library/php:7.2-apache
 #COPY docs /var/www/html/ 
 #COPY docs /usr/local/apache2/htdocs

@@ -6,7 +6,7 @@ $server_port = $_SERVER['SERVER_PORT'];
 
 echo "Welcome to Jaz Web server 1.0.0.1<br><br>";
 echo "This image is built with :<br>";
-echo "Container: docker.io/library/php:7.2-apache<br>";
+echo "Container: docker.io/jamesbrick/php:latest <br>";
 echo "Codes      : https://github.com/jasonwcc/learntocontainerized<br>";
 echo "Hostname   : " . gethostname() . "<br>";
 echo "Server IP  : " . $server_ip . "<br>";
