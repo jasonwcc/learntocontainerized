@@ -1,0 +1,5 @@
+FROM alpine
+RUN apk update && apk add stress-ng
+WORKDIR /src
+COPY . /src
+CMD "/src//gen-usage.sh"

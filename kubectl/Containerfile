@@ -1,0 +1,8 @@
+FROM alpine
+COPY ./src /usr/local/bin/
+# old entries
+#ENTRYPOINT ["/usr/local/bin/kubectl"]
+#CMD ["get","all,sa"]
+
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c", "while true; do /usr/local/bin/kubectl get pods; sleep 2; done"]
