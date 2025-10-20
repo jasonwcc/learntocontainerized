@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>My Kubernetes Webpage</title>
+    </head>
+    <body>
+      <h1>Hello -v2 from Kubernetes!</h1>
+      <p>This is a custom index.html.</p>
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  name: index-configmap
+  namespace: moon
