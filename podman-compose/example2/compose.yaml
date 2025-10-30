@@ -1,0 +1,20 @@
+services:
+  database:
+    container_name: mydb
+    environment:
+      MYSQL_ROOT_PASSWORD: redhat
+      MYSQL_USER: redhat
+      MYSQL_PASSWORD: redhat
+      MYSQL_DATABASE: datadb
+    image: docker.io/library/mysql
+  main:
+    container_name: main
+    image: docker.io/library/wordpress:latest
+    ports:
+    - <change_me>:80
+    environment:
+      WORDPRESS_DB_USER: redhat
+      WORDPRESS_DB_PASSWORD: redhat
+      WORDPRESS_DB_NAME: datadb
+      WORDPRESS_DB_HOST: "mydb:3306"
+EOF
