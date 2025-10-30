@@ -3,22 +3,22 @@ services:
     container_name: web1
     image: quay.io/jason_wong76/webserver:latest
     ports:
-    - 8080:80
+    - <change_me>:80
   webserver2:
     container_name: web2
     image: quay.io/jason_wong76/webserver:latest
     ports:
-    - 8181:80
+    - <change_me>:80
   webserver3:
     container_name: web3
     image: quay.io/jason_wong76/webserver:latest
     ports:
-    - 8282:80
+    - <change_me>:80
   dbserver1:
     container_name: db1
     image: docker.io/library/mysql
     ports:
-    - 13306:3306
+    - <change_me>:3306
     environment:
       MYSQL_ROOT_PASSWORD: cangetin
       MYSQL_USER: dba
@@ -28,7 +28,7 @@ services:
     container_name: db2
     image: registry.access.redhat.com/rhscl/mysql-80-rhel7
     ports:
-    - 23306:3306
+    - <change_me>:3306
     environment:
       MYSQL_ROOT_PASSWORD: cangetin
       MYSQL_USER: dba
