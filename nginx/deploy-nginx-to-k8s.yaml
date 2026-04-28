@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: demo-nginx
+spec: {}
+status: {}
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginxwww
+  name: nginxwww
+  namespace: demo-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxwww
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginxwww
+    spec:
+      containers:
+      - image: quay.io/jason_wong76/webserver:nginx
+        name: webserver
+---  
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxwww
+  labels: 
+    app: nginxwww
+  namespace: demo-nginx
+spec:
+  selector:
+    app: nginxwww
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+  type: ClusterIP
