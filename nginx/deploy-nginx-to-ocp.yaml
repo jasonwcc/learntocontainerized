@@ -13,10 +13,11 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginxwww
+    color: red
   name: nginxwww
   namespace: demo-nginx
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginxwww
@@ -28,7 +29,7 @@ spec:
         app: nginxwww
     spec:
       containers:
-      - image: registry.access.redhat.com/ubi8/nginx-124:1-1776865104
+      - image: registry.access.redhat.com/hi/httpd:latest
         name: webserver
 ---  
 apiVersion: v1
