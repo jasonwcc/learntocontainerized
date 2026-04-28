@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: demo-nginx
+spec: {}
+status: {}
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginxwww
+  name: nginxwww
+  namespace: demo-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxwww
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginxwww
+    spec:
+      serviceAccountName: mysa1
+      volumes:
+      - name: nginx-dir
+        emptyDir: {}
+      - name: nginx-empty
+        emptyDir: {}
+      - name: nginx-run
+        emptyDir: {}
+      - name: nginx-var-run
+        emptyDir: {}
+      containers:
+      - image: quay.io/jason_wong76/webserver:20260427
+        name: webserver
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d/
+          name: nginx-dir
+        - mountPath: /var/cache/nginx/client_temp
+          name: nginx-empty
+        - mountPath: /var/run/
+          name: nginx-var-run
+        - mountPath: /run/apache2
+          name: nginx-run
+---  
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxwww
+  labels: 
+    app: nginxwww
+  namespace: demo-nginx
+spec:
+  selector:
+    app: nginxwww
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mysa1
+  namespace: demo-nginx
+---    
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system:openshift:scc:anyuid
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:anyuid
+subjects:
+- kind: ServiceAccount
+  name: mysa1
+  namespace: demo-nginx
+---
+

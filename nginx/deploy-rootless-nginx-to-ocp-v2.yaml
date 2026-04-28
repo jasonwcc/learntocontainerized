@@ -28,6 +28,7 @@ spec:
       labels:
         app: nginxwww
     spec:
+      serviceAccountName: mysa1
       containers:
       - image: registry.access.redhat.com/hi/httpd:latest
         name: webserver
@@ -45,5 +46,24 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 80
+      targetPort: 8080
   type: ClusterIP
+---    
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mysa1
+  namespace: demo-nginx
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system:openshift:scc:anyuid
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:anyuid
+subjects:
+- kind: ServiceAccount
+  name: mysa1
+  namespace: default
+---    

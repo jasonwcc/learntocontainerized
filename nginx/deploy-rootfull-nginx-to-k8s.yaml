@@ -28,7 +28,7 @@ spec:
         app: nginxwww
     spec:
       containers:
-      - image: quay.io/jason_wong76/webserver:nginx
+      - image: quay.io/jason_wong76/webserver:20260427
         name: webserver
 ---  
 apiVersion: v1
@@ -43,6 +43,7 @@ spec:
     app: nginxwww
   ports:
     - protocol: TCP
-      port: 8080
+      port: 80
       targetPort: 80
   type: ClusterIP
+---
