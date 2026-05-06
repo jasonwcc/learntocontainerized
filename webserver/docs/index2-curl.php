@@ -6,7 +6,7 @@ $http_client_ip = getenv('HTTP_CLIENT_IP');
 
 echo "Welcome to Jaz Web server 1.0.0.1\n\n";
 echo "This image is built with :\n";
-echo "Container: docker.io/library/php:7.2-apache\n";
+echo "Container: docker.io/jamesbrick/php:7.2-apache\n";
 echo "Codes    : https://github.com/jasonwcc/learntocontainerized\n";
 echo "Hostname : " . gethostname() . "\n";
 echo "Server IP: " . $server_ip . "\n";

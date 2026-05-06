@@ -23,7 +23,7 @@ $server_ip = getenv("REMOTE_ADDR");
 
 echo "Welcome to Jaz Web server 1.0.0.1\n\n";
 echo "This image is built with :\n";
-echo "Container  \t: docker.io/library/php:7.2-apache\n";
+echo "Container  \t: docker.io/jamesbrick/php:7.2-apache\n";
 echo "Codes      \t : https://github.com/jasonwcc/learntocontainerized\n";
 echo "Hostname   \t : " . gethostname() . "\n";
 echo "IP from fx \t : " . $ipaddress . "\n";
