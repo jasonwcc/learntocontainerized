@@ -1,0 +1,16 @@
+FROM registry.access.redhat.com/ubi10/php-83:latest
+
+LABEL description="Built for training purposes using ubi-v10 and php-v8.3 from redhat container catalog. Source /opt/app-root/src/ has some simple php code to retrieve client&server IPs as well as port information. Uses 8080"
+
+WORKDIR /opt/app-root/src
+
+COPY docs/* ./
+
+EXPOSE 8080
+
+#Attempt to update the image, however cant deploy the same image to OCP. ok if deploy to k8s and podman.
+#USER root
+#RUN dnf -y update && dnf -y clean all 
+#USER 1001
+
+CMD ["/usr/libexec/s2i/run"]
